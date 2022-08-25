@@ -3,7 +3,7 @@
   "private": true,
   "main": "index.js",
   "devDependencies": {
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "eslint": "^8.2.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.25.3",
