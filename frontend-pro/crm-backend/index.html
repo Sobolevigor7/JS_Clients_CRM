@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Курсовая работа</title>
+  <link href="styles/normalize.css" rel="stylesheet">
+  <link href="styles/bootstrap.min.css" rel="stylesheet">
+  <link href="styles/choices.min.css" rel="stylesheet">
+  <link href="styles/styles.css" rel="stylesheet">
+  <script src="js/bootstrap.bundle.min.js" defer></script>
+  <script src="js/choices.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="container__header header">
+      <picture>
+        <source srcset="img/logo-small.svg" media="(max-width: 576px)">
+        <img class="header__logo" src="img/logo.svg">
+    </picture>
+      <input type="text" class="header__input" placeholder="Введите запрос">
+    </div>
+    <div class="container__main-content main-content">
+      <h1 class="main-content__header">Клиенты</h1>
+      <div class="main__content-table">
+        <table class="records-filed__table table">
+          <thead class="table__header">
+            <th class="table__header-button">
+              <button type="button"
+                class="table__header-button-button id table__header-button-button-active increment">ID</button>
+            </th>
+            <th class="table__header-button">
+              <button type="button" class="table__header-button-button fio">Фамилия Имя Отчество</button>
+            </th>
+            <th class="table__header-button">
+              <button type="button" class="table__header-button-button date-of-creation">Дата и время создания</button>
+            </th>
+            <th class="table__header-button">
+              <button type="button" class="table__header-button-button date-of-change">Последние изменения</button>
+            </th>
+            <th class="table__header-button">
+              <p class="table__header-button-button contacts">Контакты</p>
+            </th>
+            <th class="table__header-button">
+              <p class="table__header-button-button actions">Действия</p>
+            </th>
+          </thead>
+
+          <tbody class="table__body">
+          </tbody>
+
+        </table>
+
+      </div>
+    </div>
+    <div class="text-center">
+      <button class="btn main-content__button btn-outline-secondary add-new-client">
+        <img class="main-content__button-image" src="img/button-logo.svg">
+        Добавить клиента
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title"></h5>
+              <button type="button" class="btn-close button-cancel" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form class="modal-form client">
+
+                <div class="client__input-wrap">
+                  <input type="text" class="surname-input text-input" required>
+                  <span class="floating-label">Фамилия</span>
+                </div>
+                <div class="client__input-wrap">
+                  <input type="text" class="name-input text-input" required>
+                  <span class="floating-label">Имя</span>
+                </div>
+                <div class="client__input-wrap">
+                  <input type="text" class="middlename-input text-input" required>
+                  <span class="floating-label">Отчество</span>
+                </div>
+                <div class="modal-footer">
+                  <div class="modal-body__contacts">
+                    <button type="button" class="modal-footer__button-add-contact client__add-contact">Добавить
+                      контакт</button>
+                  </div>
+                  <button type="button" class="btn btn-primary modal-footer__button-save-changes">
+                    <span class="modal-footer__spinner spinner"></span>
+                    Сохранить</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Modal - delete-->
+      <div class="modal fade" id="modal-delete" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <div class="modal-header__wrap">
+              <h5 class="modal-title modal-delete__title">Удалить клиента</h5>
+              <p class="modal-delete__description">Вы действительно хотите удалить данного клиента?</p>
+            </div>
+              <button type="button" class="btn-close button-cancel modal-delete__cancel-small" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary modal-delete-footer__button-delete">Удалить</button>
+                  <button type="button" class="btn modal-footer__button-cancel button-cancel" data-bs-dismiss="modal">Отмена</button>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Modal End-->
+    </div>
+  </div>
+</body>
+</html>
